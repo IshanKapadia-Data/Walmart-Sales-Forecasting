@@ -1,33 +1,70 @@
-# 🛒 Walmart Sales Forecasting
+# 📈 **Walmart Sales Forecasting**
 
-Forecasting weekly sales across Walmart stores using XGBoost regression and time-series feature engineering. The project analyzes holiday impacts, identifies high-volatility stores, and forecasts future sales.
+---
 
-## 📌 Objectives
-- Predict weekly sales per store
-- Analyze holiday effects on sales
-- Identify stores with volatile sales patterns
-- Forecast next 4 weeks using autoregressive modeling
+## ⭐ Project Overview  
+This project forecasts **weekly sales** for Walmart stores using historical sales data, economic indicators, and holiday information.  
+The objective is to help Walmart optimize **inventory planning**, **staffing**, and **financial forecasting**.
 
-## 🧪 Tools & Techniques
-- Python, Pandas, NumPy
-- XGBoost, Scikit-learn
-- Seaborn, Matplotlib
-- Feature engineering: lag variables, seasonality, rolling means
-- Evaluation metrics: RMSE, MAE, R²
-- Statistical analysis: t-test on holiday impact
+---
 
-## 📉 Model Performance
-| Metric   | Value       |
-|----------|-------------|
-| RMSE     | 18,363.12   |
-| MAE      | 12,362.91   |
-| R² Score | 0.9988      |
+## 🎯 **Objective**  
+> Predict weekly sales per store using time series forecasting with machine learning models and evaluate performance using **RMSE**, **MAE**, and **R²**.
 
-> ✅ High predictive accuracy using time-aware XGBoost modeling and engineered features.
+---
 
-## 📊 Key Insights
-- **Holidays boost sales** significantly (*p < 0.05*)
-- **Store 4, 10, 20** are most volatile → need better forecasting/inventory plans
-- Model effectively generalizes across stores with low error and high R²
+## 📂 **Dataset Summary**  
+- **Period:** February 2010 – October 2012  
+- **Features:**  
+  - `Store` — Store ID  
+  - `Date` — Week start date  
+  - `Weekly_Sales` — Total sales (Target)  
+  - `Holiday_Flag` — Indicator for holiday weeks  
+  - `Temperature`, `Fuel_Price`, `CPI`, `Unemployment` — Economic factors  
 
+---
+
+## 🔍 **Exploratory Data Analysis (EDA) Insights**  
+- Sales peak in **November & December** (Holiday season)  
+- **Holiday weeks boost sales by ~8%**  
+- Economic indicators show **weak correlation** with sales  
+
+---
+
+## 🛠️ **Feature Engineering**  
+- ✅ Lag Feature — Previous week's sales (`Lag_1`)  
+- ✅ Rolling Mean — 4-week moving average (`Rolling_Mean_4`)  
+- ✅ Extracted **Year, Month, Week** for seasonal trends  
+
+---
+
+## 🤖 **Model Performance**  
+
+| Model | RMSE | MAE | R² |
+|---|---|---|---|
+| Random Forest | \$111,135 | \$75,771 | 0.9571 |
+| XGBoost (Default) | \$117,638 | \$76,246 | 0.9519 |
+| **XGBoost (Tuned)** | **\$106,597** | **\$72,338** | **0.9605** |
+
+- ✅ **Tuned XGBoost** achieved the best performance with **96% variance explained**
+
+---
+
+## 🔑 **Feature Importance (XGBoost)**  
+- ⭐ **Rolling_Mean_4** — Top predictor  
+- ⭐ **Lag_1** — Significant time-series influence  
+- ⭐ **Holiday_Flag** — Moderate impact  
+
+---
+
+
+## 🏆 **Key Learnings**  
+- Leveraged **time-series feature engineering**  
+- Understood importance of hyperparameter tuning  
+- Business context is crucial for real-world forecasting  
+
+---
+
+## 👨‍💻 **Author**  
+**Ishan Kapadia** — Data Scientist
 
