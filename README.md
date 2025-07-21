@@ -42,9 +42,9 @@ The objective is to help Walmart optimize **inventory planning**, **staffing**, 
 
 | Model | RMSE | MAE | R² |
 |---|---|---|---|
-| Random Forest | \$111,135 | \$75,771 | 0.9571 |
-| XGBoost (Default) | \$117,638 | \$76,246 | 0.9519 |
-| **XGBoost (Tuned)** | **\$106,597** | **\$72,338** | **0.9605** |
+| Random Forest | \$112,267 | \$75,930 | 0.9562 |
+| XGBoost (Default) | \$117,637 | \$76,245 | 0.9519 |
+| **XGBoost (Tuned)** | **\$105,052** | **\$68,387** | **0.9617** |
 
 - ✅ **Tuned XGBoost** achieved the best performance with **96% variance explained**
 
